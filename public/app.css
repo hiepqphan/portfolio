@@ -1,0 +1,125 @@
+html {
+	height: 100%;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+#header {
+	width: 100%;
+	height: 500px;
+	background: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0px;
+	z-index: 1;
+}
+
+.navbar li {
+	font-size: 160%;
+	font-weight: 500;
+}
+
+.navbar i {
+	font-size: 140%;
+}
+
+.navbar-left li a {
+	padding-bottom: 5px;
+}
+
+.menu-left {
+	color: #4b4c4f !important;
+}
+
+.navbar-left li a:hover {
+	border-bottom: 1px solid #9b9da3;
+}
+
+.navbar-right {
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.navbar-left {
+	margin-top: 6px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#header .fa-facebook-official {
+	color: #627aac;
+}
+
+#header .fa-facebook-official:hover {
+	color: #3B5998;
+}
+
+#header .fa-chevron-down {
+	color: black;
+}
+
+.navbar-default {
+	padding-top: 6px;
+	background: none;
+	border: none;
+}
+
+.navbar .navbar-collapse {
+	text-align: center;
+}
+
+#button-down {
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	font-size: 40px;
+	width: 60px;
+	margin: 0 auto;
+	margin-top: 470px;
+	border: 1px solid rgba(217, 218, 224, 0.6);
+	box-shadow: 0 1px rgba(217, 218, 224, 0.6);
+	border-radius: 50%;
+	background-color: white;
+}
+
+.content {
+	margin-top: 5%;
+	margin-left: 20%;
+	margin-right: 20%;
+	padding-bottom: 48px;
+	border-bottom: 1px solid rgba(220, 221, 226, 0.7);
+}
+
+h2 {
+	text-align: center;
+	padding-bottom: 10px;
+	font-weight: 700;
+}
+
+.container p {
+	font-size: 20px;
+	font-weight: 540;
+}
+
+.container ul {
+	padding-bottom: 5px;
+}
+
+.container li {
+	list-style: none;
+	font-size: 17px;
+}
+
+#contact {
+	border: none;
+}
+
+#footer {
+	height: 100px;
+	background: linear-gradient(to bottom, rgba(237, 237, 242, 0.4), rgba(174, 174, 178, 0.8));
+	border-top: 0.7px solid rgba(242, 242, 247, 0.1);
+}

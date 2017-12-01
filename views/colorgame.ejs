@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of Colors</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/colorgame.css">
+	<link rel="stylesheet" type="text/css" href="/font-awesome.min.css">
+    <script src="/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+	
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-bar" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    </button>
+		</div>
+
+		<div class="collapse navbar-collapse" id="main-nav-bar">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a class='menu-left' href='/'>Home</a></li>
+				<li><a class='menu-left' href="/#basic-info">About</a></li>
+				<li><a class='menu-left' href="/#contact">Contact</a></li>
+				<li><a class='menu-left' href="/colorgame">Color-Game</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="https://github.com/hiepqphan"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+				<li><a href="https://www.facebook.com/phanquang.hiep.9"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	
+</nav>
+<div id="header">
+	<p>The Game of Guessing</p>
+	<p id="colorid">rgb(0, 0, 0)<p>
+</div>
+
+<div id="menu">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="menu-option default-style" id="new-color-menu">NEW COLORS</div>
+			</div>
+			<div class="col-sm-4">
+				<div id="game-message"></div>
+			</div>
+			<div class="col-sm-4">
+				<div class="blue-white menu-option" id="easy-menu">EASY</div>
+				<div class="default-style menu-option" id="hard-menu">HARD</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="play-screen">
+	<div class="container">
+		<div class="row flex" id="first-row">
+			<div class="col-sm-4"><p></p></div>
+			<div class="col-sm-4"><p></p></div>
+			<div class="col-sm-4"><p></p></div>
+		</div>
+		<div class="row flex" id="second-row">
+			<div class="col-sm-4"><p></p></div>
+			<div class="col-sm-4"><p></p></div>
+			<div class="col-sm-4"><p></p></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/colorgame.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
