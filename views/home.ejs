@@ -2,15 +2,15 @@
 <html>
 <head>
     <title>Hiep Phan - Portfolio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome.min.css">
     <link rel="stylesheet" href="/app.css">
     <script src="/jquery-3.2.1.min.js"></script>
 </head>
 <body>
+
 <div id='header'>
-<nav class="navbar navbar-default">
-	
+<nav id='only-navbar' class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-bar" aria-expanded="false">
 		        <span class="sr-only">Toggle navigation</span>
@@ -24,22 +24,46 @@
 			<ul class="nav navbar-nav navbar-left">
 				<li><a class='menu-left' href='/'>Home</a></li>
 				<li><a class='menu-left' href="/#basic-info">About</a></li>
-				<li><a class='menu-left' href="/#contact">Contact</a></li>
+				<li><a class='menu-left' href="/#contact">My Work</a></li>
 				<li><a class='menu-left' href="/colorgame">Color-Game</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+        <li><a href="mailto:phan.1998@hotmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 				<li><a href="https://github.com/hiepqphan"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 				<li><a href="https://www.facebook.com/phanquang.hiep.9"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
-	
 </nav>
 </div>
 
-<div id='button-down'>
-	<a id='button-down-button' href='#basic-info'><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+<div id='div-logo'>
+    <a href='/'><img id='logo' src='/cat_liedown_black.png'></a>
 </div>
 
+<div id='side-menu-container'>
+<ul id='side-menu'>
+  <li>
+    <a href='/#basic-info' id='side-about'>
+      <span>About</span>
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a href='/#contact' id='side-contact'>
+      <span>Contact</span>
+      <i class="fa fa-phone" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+</div>
+
+<div id='cover-img'>
+  <img src='/image_cover.png'>
+  <!-- <div id='welcome-text'><span>Welcome</span></div>
+  <div id='below-welcome-text'><span>to my portfolio</span></div> -->
+</div>
+
+<div id='main-content'>
 <div class='container'>
 	<div class='content' id='basic-info'>
 		<h2>About me</h2>
@@ -88,6 +112,7 @@
 		<p id='github'><a href='https://github.com/hiepqphan'><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
 		<p id='facebook'><a href='https://www.facebook.com/phanquang.hiep.9'><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></p>
 	</div>
+</div>
 </div>
 
 <div id='footer'>
