@@ -13,7 +13,7 @@ $(window).scroll(function() {
 	}
 });
 
-$('#button-down-button, .navbar-left .menu-left').click(function() {
+$('.menu-left, #side-menu a').click(function() {
 	$('html, body').animate({
 		scrollTop: $($(this).attr('href')).offset().top
 	}, 500);

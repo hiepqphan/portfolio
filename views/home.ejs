@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Hiep Phan - Portfolio</title>
-    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome.min.css">
     <link rel="stylesheet" href="/app.css">
     <script src="/jquery-3.2.1.min.js"></script>
@@ -23,8 +23,8 @@
 		<div class="collapse navbar-collapse" id="main-nav-bar">
 			<ul class="nav navbar-nav navbar-left">
 				<li><a class='menu-left' href='/'>Home</a></li>
-				<li><a class='menu-left' href="/#basic-info">About</a></li>
-				<li><a class='menu-left' href="/#experience">My Work</a></li>
+				<li><a class='menu-left' href="#basic-info">About</a></li>
+				<li><a class='menu-left' href="#experience">My Work</a></li>
 				<li><a class='menu-left' href="/colorgame">Color-Game</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -34,7 +34,7 @@
 				<li class="tooltip-holder"><a href="https://github.com/hiepqphan"><i class="fa fa-github" aria-hidden="true"></i></a>
             <span id='tooltip-github' class='tooltip'><p>GitHub</p></span>
         </li>
-        <li class="tooltip-holder"><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <li class="tooltip-holder"><a href="https://www.linkedin.com/in/hiep-phan-11b58a130"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
             <span id='tooltip-linkedin' class='tooltip'><p>LinkedIn</p></span>
         </li>
 				<li class="tooltip-holder"><a href="https://www.facebook.com/phanquang.hiep.9"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
@@ -52,13 +52,19 @@
 <div id='side-menu-container'>
 <ul id='side-menu'>
   <li>
-    <a href='/#basic-info' id='side-about'>
+    <a href='#basic-info' id='side-about'>
       <span>About</span>
       <i class="fa fa-info-circle" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a href='/#contact' id='side-contact'>
+    <a href='#experience' id='side-exp'>
+      <span>Experience</span>
+      <i class="fa fa-briefcase" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a href='#contact' id='side-contact'>
       <span>Contact</span>
       <i class="fa fa-phone" aria-hidden="true"></i>
     </a>
@@ -84,6 +90,15 @@
 
 	<div class='content' id='experience'>
 		<h2>Experience</h2>
+    <p>Summer Research: Query in large databases</p>
+    <ul id='summer-research-2018'>
+      <li>Conduct a research on the <i>k</i>-Regret operator which returns a small subset of a large database
+      to represent the item close to all users' need, without any users' inputs. This small subset is called
+      the result set</li>
+      <li>My research focuses on efficiently updating the result set returned by the <i>k</i>-Regret operator.
+      This is especially helpful in a dynamic settings where the database changes frequently; therefore, re-computing
+      the result set from scratch can be expensive</li>
+    </ul>
 		<p id='acm-contest'>ACM Programming Contest</p>
 		<ul>
 			<li>Ranked one of the top 20 teams based on overall speed and accuracy of solutions</li>
@@ -115,9 +130,10 @@
 
 	<div class='content' id='contact'>
 		<h2>Contact</h2>
-		<p id='email'><a href='mailto:phan.1998@hotmail.com'>phan.1998@hotmail.com</a></p>
-		<p id='github'><a href='https://github.com/hiepqphan'><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
-		<p id='facebook'><a href='https://www.facebook.com/phanquang.hiep.9'><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></p>
+		<p id='link-email'><a href='mailto:phan.1998@hotmail.com'>phan.1998@hotmail.com</a></p>
+		<p id='link-github'><a href='https://github.com/hiepqphan'><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
+    <p id='link-linkedin'><a href="https://www.linkedin.com/in/hiep-phan-11b58a130"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></p>
+		<p id='link-facebook'><a href='https://www.facebook.com/phanquang.hiep.9'><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></p>
 	</div>
 </div>
 </div>
