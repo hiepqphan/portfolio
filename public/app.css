@@ -30,7 +30,7 @@ body {
 	font-size: 140%;
 }
 
-#div-logo {
+/* #div-logo {
 	position: absolute;
 	z-index: 2;
 	top: 50px;
@@ -42,7 +42,7 @@ body {
 #logo {
 	width: 70px;
 	height: auto;
-}
+} */
 
 .navbar-left li {
 	margin-top: 9px;
@@ -190,7 +190,6 @@ body {
 	overflow: hidden;
 	white-space: nowrap;
 	/* border-bottom: 1px solid rgba(69, 188, 18, 0.7); */
-
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
