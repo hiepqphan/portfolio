@@ -1,0 +1,79 @@
+#footer {
+	background-color: #2d2d2d;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+	height: 150px !important;
+}
+
+#footer img {
+	width: 50px;
+	height: auto;
+	margin-top: 25px;
+}
+
+#footer .row {
+	background-color: #2d2d2d;
+	width: 150%;
+	margin: 0;
+	color: #afafaf; /* Light gray */
+}
+
+#footer .row div {
+	margin: auto;
+	height: 150px;
+}
+
+#footer .row div:first-child {
+	width: 100px;
+	margin-right: 50px;
+}
+
+#footer .row div:nth-child(2) {
+	margin-left: 50px;
+}
+
+/* Disclaimer at the end */
+#footer .row div:last-child p:first-child {
+	margin-top: 90px !important;
+	margin-bottom: 0;
+	border: none !important;
+}
+
+#footer .row div:last-child p {
+	color: #686868;
+	font-size: 12px;
+	font-style: italic;
+	text-align: left !important;
+}
+
+#footer .row div p:first-child {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 0.2px solid rgba(94, 94, 94, .6);
+}
+
+#footer .row div p {
+	margin-bottom: 0;
+}
+
+#footer a {
+	color: #afafaf !important;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #d6d6d6 !important; /* White gray */
+}
+
+#footer i {
+	font-size: 32px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.mouse-pointer:hover {
+	cursor: pointer;
+	color: #d6d6d6 !important; /* White gray */
+}
