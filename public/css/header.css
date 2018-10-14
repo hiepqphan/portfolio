@@ -3,12 +3,12 @@ nav {
 }
 
 .navbar-custom {
-	background-color: none;
-	height: 60px;
+	background-color: #333333;
+	height: 80px;
 }
 
 .navbar-custom li {
-	margin-top: 30px;
+	margin-top: 0px;
 }
 
 button {
@@ -17,13 +17,13 @@ button {
 }
 
 .navbar-custom a, .navbar-custom span {
-	color: #636363 !important;
+	color: white !important;
 	font-size: 30px !important;
 	font-weight: 700;
 }
 
 .navbar ul {
-	margin-top: 50px;
+	margin-top: 1.5px;
 }
 
 .navbar .fixed-width li {
@@ -87,9 +87,10 @@ button {
 }
 
 #img-cover {
-	background-image: url("/images/rocket_morning.png");
-	background-size: cover;
+	/* margin-top: -60px; */
+}
+
+#img-cover img {
 	width: 100%;
-	height: 100vh;
-	margin-top: -60px;
+	height: auto;
 }
