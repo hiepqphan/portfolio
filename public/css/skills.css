@@ -2,31 +2,32 @@
 
 .div-wrapper {
 	/* background-color: #b5e873; */
-	background-image: linear-gradient(to bottom,
+	/* background-image: linear-gradient(to bottom,
                                       #b5e873,
-                                      #d3f7a3);
-	padding-top: 50px;
+                                      #d3f7a3); */
+	padding-top: 10px;
 	padding-bottom: 50px;
 }
 
 .section {
 	font-family: 'Mali', cursive;
 	/* height: 500px; */
-	background-color: #fcefd4;
+	background-color: #efefef;
 	margin: 0 100px 0 100px;
 	border-radius: 20px;
 }
 
 .title {
-	background-color: #f2bb74;
+	background-color: #444444;
 	text-align: center;
 	margin-top: 100px;
 	margin-bottom: 50px;
 	font-size: 25px;
-	color: #444444;
+	color: white;
 	font-weight: 700;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 20px;
+	border-bottom: 4px solid white;
 }
 
 .skill-item {
@@ -44,8 +45,8 @@
 
 .flex-bar {
 	background-image: linear-gradient(to right,
-                                      #2bd1ff,
-                                      #2bd1ff 50%,
+                                      #db6d6d,
+                                      #db6d6d 50%,
                                       transparent 50%,
                                       transparent);
   background-position: 100% 0;
