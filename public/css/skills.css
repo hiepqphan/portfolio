@@ -1,62 +1,227 @@
-/* Main content general styles */
 
-.div-wrapper {
-	/* background-color: #b5e873; */
-	/* background-image: linear-gradient(to bottom,
-                                      #b5e873,
-                                      #d3f7a3); */
-	padding-top: 10px;
-	padding-bottom: 50px;
+.header .item:nth-child(2) {
+  background-color: white;
+  border-radius: 40px;
 }
 
-.section {
-	font-family: 'Mali', cursive;
-	/* height: 500px; */
-	background-color: #efefef;
-	margin: 0 100px 0 100px;
-	border-radius: 20px;
+.message button {
+  background-image: linear-gradient(to right, #D7F1E6,
+                                              #2CFADE,
+                                              #00D3FF);
+  cursor: pointer;
+  margin-left: 300px;
+  padding: 12px 35px 12px 35px;
+  border-radius: 30px;
 }
 
-.title {
-	background-color: #444444;
-	text-align: center;
-	margin-top: 100px;
-	margin-bottom: 50px;
-	font-size: 25px;
-	color: white;
-	font-weight: 700;
-	border-top-right-radius: 20px;
-	border-top-left-radius: 20px;
-	border-bottom: 4px solid white;
+.section-wrapper .section:nth-child(1) .square-icon {
+	background-image: radial-gradient(circle, #26BDE6,
+                                    rgba(38,189,230,.33));
 }
 
-.skill-item {
-	margin-left: 17%;
-	margin-right: 20%;
-	padding-bottom: 30px;
-	display: flex;
+.section-wrapper .section:nth-child(2) .square-icon {
+  background-image: radial-gradient(circle, #F66E9D,
+                                    rgba(246,110,157,.33));
 }
 
-.flex-item {
-	padding-right: 20px;
-	text-align: right;
-	flex-basis: 25%;
+.section-wrapper .section:nth-child(3) .square-icon {
+  background-image: radial-gradient(circle, #7B75CF,
+                                    rgba(123,117,207,.33));
 }
 
-.flex-bar {
-	background-image: linear-gradient(to right,
-                                      #db6d6d,
-                                      #db6d6d 50%,
-                                      transparent 50%,
-                                      transparent);
-  background-position: 100% 0;
-  background-size: 200% 100%;
-  transition: all .9s ease-in;
-	flex-basis: 75%;
-	border: 1px solid rgba(132, 132, 132, 0.7);
-	border-radius: 10px;
+.content {
+  overflow: hidden;
 }
 
-.bigger-icon i {
-	font-size: 20px;
+.content .section {
+  margin: auto;
+  margin-top: 50px;
+  width: 450px;
+  height: 90px;
+}
+
+.content .section>div {
+  float: left;
+}
+
+.section-wrapper .section:nth-child(1) {
+  margin-top: 100px;
+}
+
+.content .square-icon {
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.content .square-icon i {
+  padding-top: 31px;
+}
+
+.content .section {
+  position: relative;
+  overflow: hidden;
+}
+
+.content .section .inner {
+  cursor: pointer;
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+  background-color: white;
+  color: #242424;
+  width: 360px;
+  height: 90px;
+  transition: all 0.2s linear;
+  animation: none;
+}
+
+.content .section:nth-child(1) .inner:hover {
+  background-color: #7ed3ea;
+}
+
+.content .section:nth-child(2) .inner:hover {
+  background-color: #f998ba;
+}
+
+.content .section:nth-child(3) .inner:hover {
+  background-color: #9894ce;
+}
+
+.content .section .inner p {
+  font-size: 25px;
+  padding-top: 25px;
+  transition: all 0.2s linear;
+}
+
+.content .section .inner:hover p {
+}
+
+.details {
+  text-align: center;
+  color: #242424;
+  transition: all 0.2s linear;
+}
+
+.back-button {
+  display: inline-block;
+  font-family: "Segoe UI Semibold";
+  font-size: 14px;
+  margin-top: 30px;
+  padding-left: 60%;
+}
+
+.back-button button {
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+  margin-left: 300px;
+  padding: 12px 35px 12px 35px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+}
+
+.left-button, .right-button {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  font-size: 45px;
+  color: white;
+  padding-top: 100px;
+}
+
+.table {
+  display: inline-block;
+  background-color: white;
+  margin-top: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 55%;
+}
+
+.table-header {
+  border-top: solid 5px #26BDE6;
+  box-shadow: 0 3px 5px rgba(0,0,0,.16);
+  font-family: "Segoe UI Semibold";
+  width: 100%;
+  height: 50px;
+}
+
+.table-header>div {
+  float: left;
+}
+
+.table-header>div:first-child span {
+  display: inline-block;
+  font-family: "Segoe UI";
+  /* font-size: 17px; */
+}
+
+.table-header>div:first-child {
+  text-align: left;
+  font-size: 20px;
+  width: 30%;
+  margin-top: 7px;
+  padding-left: 40px;
+}
+
+.table-header>div:nth-child(2) {
+  margin-top: 9px;
+  width: 70%;
+}
+
+.table-header div:nth-child(2) div {
+  display: inline-block;
+}
+
+.legend-bar {
+  background-image: linear-gradient(to right, #A8FB94,
+                                              #FFD25A,
+                                              #FF7474);
+  border-radius: 5px;
+  width: 40%;
+  height: 10px;
+}
+
+.table-row {
+  font-size: 13.5px;
+  border-bottom: solid 1px rgba(112,112,112,.19);
+  width: 100%;
+  height: 50px;
+}
+
+.table-row>div {
+  float: left;
+}
+
+.table-row>div:first-child {
+  text-align: left;
+  margin-top: 14px;
+  padding-left: 90px;
+  width: 30%;
+}
+
+.table-row>div:nth-child(2) {
+  text-align: center;
+  width: 70%;
+  padding-right: 5px;
+}
+
+.proficiency-bar {
+  display: inline-block;
+  background-color: red;
+  border-radius: 5px;
+  margin-top: 22px;
+  width: 40%;
+  height: 5px;
 }

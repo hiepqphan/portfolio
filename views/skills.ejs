@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
     <link rel="stylesheet" href="/css/skills.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -15,126 +16,173 @@
 
 <% include partials/header %>
 
-<div class="div-wrapper">
-<div class="section" id="section-programming">
+<div class="whole-screen header">
+  <div class="nav-bar-custom">
+    <div class="item">
+        <a href="/">ABOUT</a>
+        <div class="white-border-bottom">
+        </div>
+    </div>
+    <div class="item">
+      <a href="/skills">SKILLS</a>
+    </div>
+    <div class="item">
+      <a href="/work">PROJECTS</a>
+      <div class="white-border-bottom">
+      </div>
+    </div>
+  </div>
+  <div class="message">
+    <p>I have experience in</p>
+    <p>programming, web development</p>
+    <p>and more...</p>
+    <button type="button">LEARN MORE</button>
+  </div>
+</div>
+
+<div class="whole-screen content">
   <div class="title">
-    PROGRAMMING
+    SKILLS
   </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      C/C++ <i class="fa fa-laptop" aria-hidden="true"></i>
+  <div class="section-wrapper">
+    <div class="section" display="programming">
+      <div class="square-icon"><i class="fas fa-laptop"></i></div>
+      <div class="inner">
+        <p>Programming</p>
+      </div>
     </div>
-    <div class="flex-bar">
+    <div class="section" display="web">
+      <div class="square-icon"><i class="fas fa-globe-americas"></i></div>
+      <div class="inner">
+        <p>Web</p>
+      </div>
     </div>
-  </div>
-  <div class="skill-item bigger-icon">
-    <div class="flex-item">
-      Python <i class="fab fa-python"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item bigger-icon">
-    <div class="flex-item">
-      Java <i class="fab fa-java"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      Algorithms <i class="fa fa-cog" aria-hidden="true"></i>
-    </div>
-    <div class="flex-bar">
+    <div class="section" display="others">
+      <div class="square-icon"><i class="fas fa-asterisk"></i></div>
+      <div class="inner">
+        <p>Others</p>
+      </div>
     </div>
   </div>
-  <div class="skill-item bigger-icon">
-    <div class="flex-item">
-      OOP <i class="fa fa-cubes" aria-hidden="true"></i>
+
+  <div class="details">
+    <div class="back-button">
+      <button type="button"><i class="fas fa-angle-left" style="font-size:13px"></i> BACK</button>
     </div>
-    <div class="flex-bar">
+    <div class="flex-wrapper">
+      <div class="left-button">
+        <i class="fas fa-angle-left"></i>
+      </div>
+      <div class="table">
+        <div class="table-header">
+          <div>SKILL: <span>Programming</span></div>
+          <div>
+            <div>Beginner</div>
+            <div class="legend-bar"></div>
+            <div>Advanced</div>
+          </div>
+        </div>
+        <div class="skill-group" id="programming">
+          <div class="table-row">
+            <div><div>C/C++</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Python</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Java</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Algorithms</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Object-oriented programming</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="skill-group" id="web">
+          <div class="table-row">
+            <div><div>HTML5</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>CSS3</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Bootstrap</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Javascript</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" id="others">
+          <div class="table-row">
+            <div><div>Git</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>SQL</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Unreal Engine 4</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Android Development</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+          <div class="table-row">
+            <div><div>Illustrator</div></div>
+            <div>
+              <div class="proficiency-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-button">
+        <i class="fas fa-angle-right"></i>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="section bigger-icon" id="section-web">
-  <div class="title">
-    WEB DEVELOPEMENT
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      HTML5 <i class="fab fa-html5"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      CSS3 <i class="fab fa-css3-alt"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      Bootstrap <i class="fas fa-dice-d20"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      Javascript/jQuery <i class="fab fa-js-square"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-</div>
-
-<div class="section last-section" id="section-others">
-  <div class="title">
-    OTHER SKILLS
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      Git <i class="fas fa-code-branch"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      SQL <i class="fas fa-database"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      Unreal Engine 4 <i class="fas fa-cogs"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item bigger-icon">
-    <div class="flex-item">
-      Android Dev <i class="fab fa-android"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-  <div class="skill-item">
-    <div class="flex-item">
-      Illustrator <i class="fas fa-paint-brush"></i>
-    </div>
-    <div class="flex-bar">
-    </div>
-  </div>
-</div>
-</div>
-
-<% include partials/footer %>
-
+<script src="/js/all.js"></script>
 <script src='/js/skills.js'></script>
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>

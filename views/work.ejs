@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hiep Phan - Skills</title>
+    <title>Hiep Phan - Projects</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
     <link rel="stylesheet" href="/css/work.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -14,7 +15,127 @@
 
 <% include partials/header %>
 
-<div class="div-wrapper">
+<div class="whole-screen header">
+  <div class="nav-bar-custom">
+    <div class="item">
+        <a href="/">ABOUT</a>
+        <div class="white-border-bottom">
+        </div>
+    </div>
+    <div class="item">
+      <a href="/skills">SKILLS</a>
+      <div class="white-border-bottom">
+      </div>
+    </div>
+    <div class="item">
+      <a href="/work">PROJECTS</a>
+    </div>
+  </div>
+  <div class="message">
+    <p>From research</p>
+    <p>to app developement</p>
+    <p>and more...</p>
+    <button type="button">LEARN MORE</button>
+  </div>
+</div>
+
+<div class="whole-screen content">
+  <div class="title">
+    PROJECTS
+  </div>
+  <div class="display-area">
+    <div class="menu-bar">
+      <div class="menu-item" display="research">
+        <p><i class="fas fa-book"></i></p>
+        <p>Research</p>
+      </div>
+      <div class="menu-item" display="contest">
+        <p><i class="fas fa-trophy"></i></p>
+        <p>Programming</p>
+        <p>Contest</p>
+      </div>
+      <div class="menu-item" display="related">
+        <p><i class="fas fa-briefcase"></i></p>
+        <p>Related Work</p>
+      </div>
+    </div>
+    <div class="content-area">
+      <div class="section" id="research">
+        <div class="sub-title">Academic Research</div>
+        <div class="date">Summer 2018</div>
+        <div class="sub-content">
+          <p>The <span class="text-italic">k</span>-Regret operator is a recently invented database query that combines
+             the nice properties of the well-known <span class="text-italic">top-k</span> and <span class="text-italic">skyline</span>
+             operator to output a small subset of a large database that represents the items close to users' desired items,
+             without any users' inputs. Currently, the existing algorithms for "k-Regret operator"
+             does not have any dynamic operations for updating the result set when there is a change
+             in the database (i.e. an insertion or deletion of an item).</p>
+          <p>Our research focuses on creating a new algorithm that updates the result set
+             previously obtained by a k-Regret operator algorithm whenever there is
+             an insertion or deletion of an item in the database. Our algorithms are implemented in C++.</p>
+          <p>For an in-depth explanation of the research, please refer to <a href="https://1drv.ms/b/s!Ar9GFEbmQta-alpxFtSpicUbJsg"><strong>this
+             paper</strong></a>.</p>
+        </div>
+      </div>
+
+      <div class="section" id="contest">
+        <div class="sub-title">ACM Programming Contest</div>
+        <div class="date">October 2016</div>
+        <div class="sub-content">
+          <p>This is my first programming contest in the U.S. during my first year. Because of the hiatus from online
+             problem-solving due to preparation for college, I only performed at a percentage of my full potential. My end result
+             was achieving top 20 in this regional contest.</p>
+        </div>
+
+        <div class="sub-title">City Contest in Hanoi, Vietnam</div>
+        <div class="date">November 2014</div>
+        <div class="sub-content">
+          <p>After intensive training in summer 2014, I participated in the computer science city contest in Hanoi, Vietnam,
+             my hometown. The training included 8 hours in class every other day and my own practice at home in free time. The contest followed
+             the standard of a programming contest: there were 5 problems and the person solving the most and fastest would win the first prize.
+             Each person competed individually. Though I only achieved the second prize, the training process fully prepared me with necessary tools,
+             like essential algorithms and coding skills, to excel at computer science in an academic environment.</p>
+        </div>
+      </div>
+
+      <div class="section" id="related">
+        <div class="sub-title">Online problem solving</div>
+        <div class="date">Ongoing</div>
+        <div class="sub-content">
+          <div>Solved more than 100 medium to hard problems on SPOJ.</div>
+          <div>Continuing to solve problems on Leetcode.</div>
+        </div>
+
+        <div class="sub-title">Teaching Assistant & Computer Science Tutor</div>
+        <div class="date">Fall 2017</div>
+        <div class="sub-content">
+          <div>Selected based on outstanding academic performance.</div>
+        </div>
+
+        <div class="sub-title">Unreal Engine 4: Escape Room</div>
+        <div class="date">Ongoing</div>
+        <div class="sub-content">
+          <div>Learn the basic of Unreal Engine 4.</div>
+          <div>Take both approaches of using Blueprint and Unreal Engine framework in C++.</div>
+        </div>
+
+        <div class="sub-title">Webpage for Security Office</div>
+        <div class="date">Summer 2017</div>
+        <div class="sub-content">
+          <div>Created an on-campus emergency phone map in HTML.</div>
+        </div>
+
+        <div class="sub-title">Android App: Simple Quiz</div>
+        <div class="date">Summer 2017</div>
+        <div class="sub-content">
+          <div>Learned the basic of making an Android application using Java and Android Studio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="div-wrapper">
 <div class="container section-experience" id="home-experience">
   <div class="row">
     <div class="col-lg-3 shadow" id="div-research">
@@ -99,10 +220,9 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
-<% include partials/footer %>
-
+<script src="/js/all.js"></script>
 <script src='/js/work.js'></script>
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>

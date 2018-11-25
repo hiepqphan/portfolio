@@ -1,53 +1,74 @@
-var sections_animated = {
-  "section-programming": 0,
-  "section-web": 0,
-  "section-others": 0
-};
+var content = ['programming', 'web', 'others'];
+var content_map = {'programming': 0,
+                   'web': 1,
+                   'others': 2};
+var border_color = ['#26BDE6', '#F66E9D', '#7B75CF'];
+var skills_color = [[4, 3, 0, 4, 3], [4,3,2,4], [3,3,2,0,2]];
 
-var isAllAnimated = false;
-
-var skill_percent = {
-  "section-programming": ["0%", "20%", "70%", "10%", "15%"],
-  "section-web": ["10%", "20%", "20%", "0%"],
-  "section-others": ["20%", "50%", "70%", "70%", "60%"]
-};
-
-function animate_skill_bar(id) {
-  var bars = $("#"+id+" .skill-item .flex-bar");
-  console.log(bars);
-  for (var i = 0; i < bars.length; ++i) {
-    $(bars[i]).css("background-position", skill_percent[id][i]+" 0");
-  }
-
-  sections_animated[id] = 1;
-  if (sections_animated["section-programming"] &&
-      sections_animated["section-web"] &&
-      sections_animated["section-others"])
-      isAllAnimated = true;
-
-  if (isAllAnimated) {
-    $(".section").unbind("mouseenter");
+function ready_handler() {
+  var groups = $(".skill-group");
+  for (var i = 0; i < groups.length; ++i)
+  {
+    var id = "#"+groups[i].id + " .proficiency-bar";
+    var skills = $(id);
+    for (var j = 0; j < skills.length; ++j)
+    {
+      $(skills[j]).css("background-color",pro_bar_colors[skills_color[content_map[groups[i].id]][j]]);
+    }
   }
 }
 
-function initialize_size() {
-  // Adjust footer's width
-  $("#footer .row").css("width",$(window).width());
-}
+$(document).ready(ready_handler);
 
-// ----- Initialize -----
+// Events
+$(".content .section").click(function (event) {
+  var id = $(this).attr("display");
+  onDisplay = content_map[id];
+  $(".table-header").css("border-top-color", border_color[content_map[id]]);
+  $(".table-header>div:first-child span").text(id.toUpperCase());
+  for (var i = 0; i < 3; ++i)
+    if (i == content_map[id]) {
+      $("#"+content[i]).show();
+    }
+    else
+      $("#"+content[i]).hide();
 
-// Make sure styles are correct when page is loaded
-initialize_size();
+  $(".section-wrapper").animate({width:"toggle"}, 500, "swing", function() {
+    $(".details").show();
+    $(".details").animate({opacity:1});
+  });
+});
 
-// Enable tooltips everywhere
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+$(".left-button").click(function () {
+  var nextDisplay = onDisplay-1;
+  if (nextDisplay == -1)
+    nextDisplay = 2;
+  $("#"+content[onDisplay]).slideToggle();
+  $(".table-header").css("border-top-color", border_color[nextDisplay]);
+  $(".table-header>div:first-child span").text(content[nextDisplay].toUpperCase());
+  $("#"+content[nextDisplay]).slideToggle();
+  onDisplay = nextDisplay;
+});
 
-// Continuously update the styles to fit the window size
-$(window).on("resize", initialize_size);
+$(".right-button").click(function () {
+  var nextDisplay = onDisplay+1;
+  if (nextDisplay == 3)
+    nextDisplay = 0;
+  $("#"+content[onDisplay]).slideToggle();
+  $(".table-header").css("border-top-color", border_color[nextDisplay]);
+  $(".table-header>div:first-child span").text(content[nextDisplay].toUpperCase());
+  $("#"+content[nextDisplay]).slideToggle();
+  onDisplay = nextDisplay;
+});
 
-$(".section").on("mouseenter", function() {
-  animate_skill_bar($(this).attr("id"));
+
+$(".details .back-button button").click(function (event) {
+  createRipple(this, event, "black");
+  window.setTimeout(function() {
+    $(".ripple-circle").remove();
+    $(".details").animate({opacity:0}, 300, "swing", function() {
+      $(".details").hide();
+      $(".section-wrapper").animate({width:"toggle"}, 500, "swing");
+    });
+  }, 300);
 });

@@ -1,3 +1,27 @@
-body {
 
+.header .item:nth-child(1) {
+  background-color: white;
+  border-radius: 40px;
+}
+
+.message button {
+  background-image: linear-gradient(to right, #FEA3E0,
+                                              #82B4FF,
+                                              #AF6DF1);
+  cursor: pointer;
+  margin-left: 300px;
+  padding: 12px 35px 12px 35px;
+  border-radius: 30px;
+}
+
+.content {
+  text-align: center;
+}
+
+.display-area {
+  display: inline-block;
+  background-color: white;
+  width: 1000px;
+  height: 70%;
+  margin-top: 70px;
 }
