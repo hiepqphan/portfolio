@@ -19,6 +19,7 @@ a:hover {
 
 .social-media {
   position: fixed;
+  z-index: 2;
   top: 300px;
   left: 0px;
   overflow: hidden;

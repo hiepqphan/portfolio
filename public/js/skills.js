@@ -37,7 +37,7 @@ $(".section-wrapper>.section").click(function (event) {
         $("#"+content[i]).hide();
 
     $(".section-wrapper>.section>.inner").animate({width:0, opacity:0}, 500, "swing", function() {
-      $(".section-wrapper").css({"position":"absolute", "width":"100%"});
+      $(".section-wrapper").css({"position":"absolute", width:"100%"});
       var sections = $(".section-wrapper>.section");
       for (var i = 0; i < sections.length; ++i) {
         $(sections[i]).animate({top:300+90*(sections.length-i-1), "margin-top":0});
