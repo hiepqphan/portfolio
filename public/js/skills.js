@@ -24,33 +24,45 @@ $(document).ready(ready_handler);
 
 // Events
 $(".section-wrapper>.section").click(function (event) {
-  var id = $(this).attr("display");
-  onDisplay = content_map[id];
-  $(".table-header").css("border-top-color", border_color[content_map[id]]);
-  $(".table-header>div:first-child span").text(id.toUpperCase());
-  for (var i = 0; i < 3; ++i)
-    if (i == content_map[id]) {
-      $("#"+content[i]).show();
-    }
-    else
-      $("#"+content[i]).hide();
+  if (onDisplay == -1) {
+    var id = $(this).attr("display");
+    onDisplay = content_map[id];
+    $(".table-header").css("border-top-color", border_color[content_map[id]]);
+    $(".table-header>div:first-child span").text(id.toUpperCase());
+    for (var i = 0; i < 3; ++i)
+      if (i == content_map[id]) {
+        $("#"+content[i]).show();
+      }
+      else
+        $("#"+content[i]).hide();
 
-  $(".section-wrapper>.section>.inner").animate({width:0, opacity:0}, 500, "swing", function() {
-    $(".section-wrapper").css({"position":"absolute", "width":"100%"});
-    var sections = $(".section-wrapper>.section");
-    for (var i = 0; i < sections.length; ++i) {
-      $(sections[i]).animate({top:300+90*(sections.length-i-1), "margin-top":0});
-    }
+    $(".section-wrapper>.section>.inner").animate({width:0, opacity:0}, 500, "swing", function() {
+      $(".section-wrapper").css({"position":"absolute", "width":"100%"});
+      var sections = $(".section-wrapper>.section");
+      for (var i = 0; i < sections.length; ++i) {
+        $(sections[i]).animate({top:300+90*(sections.length-i-1), "margin-top":0});
+      }
 
-    var space = 10;
-    var margin = ($(".content").width()-90*3-space*2)/2;
-    for (var i = 0; i < sections.length; ++i) {
-      $(sections[i]).animate({left:margin+90*i+space*i, "margin":0});
-    }
+      var space = 10;
+      var margin = ($(".content").width()-90*3-space*2)/2;
+      for (var i = 0; i < sections.length; ++i) {
+        $(sections[i]).animate({left:margin+90*i+space*i, "margin":0});
+      }
 
-    $(".details").show();
-    $(".details").animate({opacity:1});
-  });
+      $(".details").show();
+      $(".details").animate({opacity:1});
+    });
+  }
+  else {
+    var nextDisplay = content_map[$(this).attr("display")];
+    if (nextDisplay != onDisplay) {
+      $("#"+content[onDisplay]).slideToggle();
+      $(".table-header").css("border-top-color", border_color[nextDisplay]);
+      $(".table-header>div:first-child span").text(content[nextDisplay].toUpperCase());
+      $("#"+content[nextDisplay]).slideToggle();
+      onDisplay = nextDisplay;
+    }
+  }
 
 });
 
