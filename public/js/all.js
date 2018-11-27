@@ -26,7 +26,6 @@ function createRipple(button, event, color) {
   $(button).append("<div class='ripple-circle'></div>");
   $(".ripple-circle").css({width:d, height:d});
 
-  console.log(event.clientY, $(button).offset().top);
   var top_pos = event.clientY;
   var left_pos = event.clientX - $(button).offset().left - d/2;
   $(".ripple-circle").css({top:"-70%", left:0});
@@ -53,8 +52,14 @@ $(window).scroll(function() {
 });
 
 $(window).resize(function() {
-  $(".section-mini-bar").css("top", $("body").height()-300);
-  $(".section-mini-bar").css("left", $("body").width()/2 - $(".section-mini-bar").width()/2);
+  if (onDisplay != -1) {
+    var space = 10;
+    var margin = ($(".content").width()-90*3-space*2)/2;
+    var sections = $(".section-wrapper>.section");
+    for (var i = 0; i < sections.length; ++i) {
+        $(sections[i]).css({left:margin+90*i+space*i});
+    }
+  }
 });
 
 $(".message button").click(function() {

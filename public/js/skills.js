@@ -35,26 +35,23 @@ $(".section-wrapper>.section").click(function (event) {
     else
       $("#"+content[i]).hide();
 
-  $(".section-wrapper").animate({width:"toggle"}, 500, "swing", function() {
+  $(".section-wrapper>.section>.inner").animate({width:0, opacity:0}, 500, "swing", function() {
+    $(".section-wrapper").css({"position":"absolute", "width":"100%"});
+    var sections = $(".section-wrapper>.section");
+    for (var i = 0; i < sections.length; ++i) {
+      $(sections[i]).animate({top:300+90*(sections.length-i-1), "margin-top":0});
+    }
+
+    var space = 10;
+    var margin = ($(".content").width()-90*3-space*2)/2;
+    for (var i = 0; i < sections.length; ++i) {
+      $(sections[i]).animate({left:margin+90*i+space*i, "margin":0});
+    }
+
     $(".details").show();
     $(".details").animate({opacity:1});
-
-    var minibarWidth = $(".section-mini-bar").width();
-    $(".section-mini-bar").css("top", $("body").height()-300);
-    $(".section-mini-bar").css("left", $("body").width()/2 - minibarWidth/2);
   });
-});
 
-$(".section-mini-bar .section").click(function() {
-  var id = $(this).attr("display");
-  nextDisplay = content_map[id];
-  if (nextDisplay != onDisplay) {
-    $("#"+content[onDisplay]).slideToggle();
-    $(".table-header").css("border-top-color", border_color[nextDisplay]);
-    $(".table-header>div:first-child span").text(content[nextDisplay].toUpperCase());
-    $("#"+content[nextDisplay]).slideToggle();
-    onDisplay = nextDisplay;
-  }
 });
 
 $(".left-button").click(function () {
@@ -81,12 +78,30 @@ $(".right-button").click(function () {
 
 
 $(".details .back-button button").click(function (event) {
+  onDisplay = -1;
   createRipple(this, event, "black");
   window.setTimeout(function() {
     $(".ripple-circle").remove();
     $(".details").animate({opacity:0}, 300, "swing", function() {
       $(".details").hide();
-      $(".section-wrapper").animate({width:"toggle"}, 500, "swing");
     });
   }, 300);
+
+  var sections = $(".section-wrapper>.section");
+  var left = ($(".content").width()-450)/2;
+  $(sections).animate({left:left}, function() {
+    for (var i = 0; i < sections.length; ++i) {
+      $(sections[i]).animate({top:50*i+100}, function(i) {
+        $(this).children(".inner").animate({width:450-90}, function() {
+          $(this).animate({opacity:1});
+          $(".section-wrapper").attr({"style":"position=static"});
+
+          window.setTimeout(function() {
+            $(".section").attr({"style":""});
+          }, 500);
+        }, 0);
+      });
+    }
+  });
+
 });
