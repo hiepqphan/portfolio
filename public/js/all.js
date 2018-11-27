@@ -17,7 +17,6 @@ function initialize() {
   $(".message button").fadeIn(1000);
   $(".message p").slideDown(1000);
   $(".message p").animate({opacity:1}, 1000);
-
 }
 
 function createRipple(button, event, color) {
@@ -49,6 +48,11 @@ $(window).scroll(function() {
   else {
     $(".social-media .social-item").css({"margin-left":-60});
   }
+});
+
+$(window).resize(function() {
+  $(".section-mini-bar").css("top", $("body").height()-300);
+  $(".section-mini-bar").css("left", $("body").width()/2 - $(".section-mini-bar").width()/2);
 });
 
 $(".message button").click(function() {

@@ -19,7 +19,9 @@
 }
 
 .content img {
-  width: 200px;
+  background-color: #ededed;
+  border-radius: 50%;
+  width: 300px;
   height: auto;
 }
 
@@ -37,12 +39,9 @@
 }
 
 .display-area {
-  /* background-color: white; */
   margin-top: 70px;
-  margin-right: 180px;
   width: 800px;
   height: 70%;
   text-align: left;
   font-size: 25px;
-  /* color: #242424; */
 }
