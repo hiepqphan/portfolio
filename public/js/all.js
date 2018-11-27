@@ -2,6 +2,8 @@ var pro_bar_colors = ["#A8FB94", "#F9D45C", "#FFC65E", "#FF9B69", "#FF7773"];
 var onDisplay = -1;
 
 function initialize() {
+  $(".social-media").hide();
+  
   if (window.pageYOffset >= $(".content").offset().top - $(".content").height()/2) {
     $(".social-media .social-item").css({"margin-left":60});
   }
