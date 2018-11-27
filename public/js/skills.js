@@ -20,7 +20,6 @@ function ready_handler() {
   $(".social-media").show();
 }
 
-$(".social-media").hide();
 $(document).ready(ready_handler);
 
 // Events
