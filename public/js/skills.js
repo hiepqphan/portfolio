@@ -36,11 +36,18 @@ $(".section-wrapper>.section").click(function (event) {
       else
         $("#"+content[i]).hide();
 
+    var base = 300;
+    if ($(window).height() < 500)
+      base = 80;
+    else if ($(window).height() < 800)
+      base = 140;
     $(".section-wrapper>.section>.inner").animate({width:0, opacity:0}, 500, "swing", function() {
       $(".section-wrapper").css({"position":"absolute", width:"100%"});
       var sections = $(".section-wrapper>.section");
       for (var i = 0; i < sections.length; ++i) {
-        $(sections[i]).animate({top:300+90*(sections.length-i-1), "margin-top":0});
+        $(sections[i]).animate({top:base+90*(sections.length-i-1), "margin-top":0}, function() {
+          window.setTimeout(function() {$(".section-wrapper .section:last-child").css({width:90});}, 200);
+        });
       }
 
       var space = 10;
@@ -92,6 +99,7 @@ $(".right-button").click(function () {
 $(".details .back-button button").click(function (event) {
   onDisplay = -1;
   createRipple(this, event, "black");
+  $(".section-wrapper .section").css({width: 450});
   window.setTimeout(function() {
     $(".ripple-circle").remove();
     $(".details").animate({opacity:0}, 300, "swing", function() {
@@ -101,18 +109,30 @@ $(".details .back-button button").click(function (event) {
 
   var sections = $(".section-wrapper>.section");
   var left = ($(".content").width()-450)/2;
+  var consts = [[5,10], [25,50], [50,100]];
+  var index = 2;
+  if ($(window).height() < 500)
+    index = 0;
+  else if ($(window).height() < 800)
+    index = 1;
   $(sections).animate({left:left}, function() {
     for (var i = 0; i < sections.length; ++i) {
-      $(sections[i]).animate({top:50*i+100}, function(i) {
-        $(this).children(".inner").animate({width:450-90}, function() {
-          $(this).animate({opacity:1});
-          $(".section-wrapper").attr({"style":"position=static"});
-
-          window.setTimeout(function() {
-            $(".section").attr({"style":""});
-          }, 500);
-        }, 0);
-      });
+      if (i != 0)
+        $(sections[i]).animate({top:0, "margin-top":consts[index][0]}, function(object) {
+          $(this).children(".inner").animate({width:450-90}, function() {
+            $(this).animate({opacity:1});
+            $(".section-wrapper").css({position:"static"});
+            $(".section").css({width:450});
+          }, 0);
+        });
+      else
+        $(sections[i]).animate({top:0, "margin-top":consts[index][1]}, function(object) {
+          $(this).children(".inner").animate({width:450-90}, function() {
+            $(this).animate({opacity:1});
+            $(".section-wrapper").css({position:"static"});
+            $(".section").css({width:450});
+          }, 0);
+        });
     }
   });
 
