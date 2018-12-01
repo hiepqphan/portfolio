@@ -43,12 +43,12 @@ $(".section-wrapper>.section").click(function (event) {
       base = 140;
     $(".section-wrapper>.section>.inner").animate({width:0, opacity:0}, 500, "swing", function() {
       $(".section-wrapper").css({"position":"absolute", width:"100%"});
+      $(".section-wrapper .section .inner").hide();
       var sections = $(".section-wrapper>.section");
       for (var i = 0; i < sections.length; ++i) {
         $(sections[i]).animate({top:base+90*(sections.length-i-1), "margin-top":0}, function() {
           window.setTimeout(function() {
             $(".section-wrapper .section:last-child").css({width:90});
-            $(".section-wrapper .section .inner").hide();
           }, 200);
         });
       }
