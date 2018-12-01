@@ -15,18 +15,22 @@
 }
 
 div>.section:nth-child(1) .square-icon {
-	background-image: radial-gradient(circle, #26BDE6,
-                                    rgba(38,189,230,.33));
+  background-color: #26BDE6;
+	/* background-image: radial-gradient(circle, #26BDE6,
+                                    rgba(38,189,230,.33)); */
 }
 
 div>.section:nth-child(2) .square-icon {
-  background-image: radial-gradient(circle, #F66E9D,
-                                    rgba(246,110,157,.33));
+  background-color: #F66E9D;
+  /* background-image: radial-gradient(circle, #F66E9D,
+                                    rgba(246,110,157,.33)); */
+
 }
 
 div>.section:nth-child(3) .square-icon {
-  background-image: radial-gradient(circle, #7B75CF,
-                                    rgba(123,117,207,.33));
+  background-color: #7B75CF;
+  /* background-image: radial-gradient(circle, #7B75CF,
+                                    rgba(123,117,207,.33)); */
 }
 
 .content {
@@ -77,6 +81,24 @@ div>.section:nth-child(3) .square-icon {
   animation: none;
 }
 
+.content .section:nth-child(1) .inner {
+  border-top: solid 1px #7ed3ea;
+  border-right: solid 1px #7ed3ea;
+  border-bottom: solid 1px #7ed3ea;
+}
+
+.content .section:nth-child(2) .inner {
+  border-top: solid 1px #f998ba;
+  border-right: solid 1px #f998ba;
+  border-bottom: solid 1px #f998ba;
+}
+
+.content .section:nth-child(3) .inner {
+  border-top: solid 1px #9894ce;
+  border-right: solid 1px #9894ce;
+  border-bottom: solid 1px #9894ce;
+}
+
 .content .section:nth-child(1) .inner:hover {
   background-color: #7ed3ea;
 }
@@ -115,7 +137,7 @@ div>.section:nth-child(3) .square-icon {
 
 .back-button button {
   position: relative;
-  background-color: white;
+  background-color: #eaeaea;
   cursor: pointer;
   margin-left: 300px;
   padding: 12px 35px 12px 35px;
@@ -126,7 +148,7 @@ div>.section:nth-child(3) .square-icon {
 .ripple-effect {
   position: absolute;
   z-index: 2;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, .3);
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 0.6s linear;
@@ -137,7 +159,7 @@ div>.section:nth-child(3) .square-icon {
   display: inline-block;
   position: absolute;
   font-size: 45px;
-  color: white;
+  color: #242424;
   padding-top: 100px;
 }
 
@@ -145,8 +167,8 @@ div>.section:nth-child(3) .square-icon {
   display: inline-block;
   background-color: white;
   margin-top: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 40px;
+  margin-right: 20px;
   width: 55%;
 }
 
@@ -195,6 +217,8 @@ div>.section:nth-child(3) .square-icon {
 
 .table-row {
   font-size: 13.5px;
+  border-left: solid 1px rgba(112,112,112,.19);
+  border-right: solid 1px rgba(112,112,112,.19);
   border-bottom: solid 1px rgba(112,112,112,.19);
   width: 100%;
   height: 50px;

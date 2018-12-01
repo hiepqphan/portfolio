@@ -40,6 +40,7 @@ function adjustSize() {
 
   if ($(window).width() < 1700) {
     $(".hideable").hide();
+    
     if ($(window).width() < 1000) {
       $(".message").css({"padding-top":"25%", "padding-left":"23%"});
       $(".white-border-bottom").css("border-bottom", "solid 2px #bafffd");

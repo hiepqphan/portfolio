@@ -46,7 +46,10 @@ $(".section-wrapper>.section").click(function (event) {
       var sections = $(".section-wrapper>.section");
       for (var i = 0; i < sections.length; ++i) {
         $(sections[i]).animate({top:base+90*(sections.length-i-1), "margin-top":0}, function() {
-          window.setTimeout(function() {$(".section-wrapper .section:last-child").css({width:90});}, 200);
+          window.setTimeout(function() {
+            $(".section-wrapper .section:last-child").css({width:90});
+            $(".section-wrapper .section .inner").hide();
+          }, 200);
         });
       }
 
@@ -127,6 +130,7 @@ $(".details .back-button button").click(function (event) {
         });
       else
         $(sections[i]).animate({top:0, "margin-top":consts[index][1]}, function(object) {
+          $(".section-wrapper .section .inner").show();
           $(this).children(".inner").animate({width:450-90}, function() {
             $(this).animate({opacity:1});
             $(".section-wrapper").css({position:"static"});

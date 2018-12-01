@@ -1,4 +1,6 @@
 body {
+  background-image: url("../images/full_body_cover.png");
+  background-size: cover;
   font-family: "Segoe UI", Arial;
   color: #242424;
 }
@@ -51,7 +53,7 @@ a:hover {
 
 .tooltip-inner {
   font-family: "Segoe UI Semibold";
-  background-color: white;
+  background-color: #eaeaea;
   margin-left: 10px;
   color: #242424;
 }
@@ -62,11 +64,11 @@ a:hover {
 
 .tooltip.bs-tooltip-right .arrow:before {
   margin-left: 10px;
-  border-right-color: white !important;
+  border-right-color: #eaeaea !important;
 }
 
 .tooltip.bs-tooltip-bottom .arrow:before {
-  border-bottom-color: white !important;
+  border-bottom-color: #eaeaea !important;
 }
 
 .social-media a:nth-child(1) div {
@@ -96,7 +98,7 @@ a:hover {
 }
 
 .header {
-  background-image: url("../images/cover_image.png");
+  /* background-image: url("../images/cover_image.png"); */
   background-size: cover;
 }
 
@@ -202,7 +204,7 @@ a:hover {
 }
 
 .content {
-  background-image: url("../images/cover_image_2.png");
+  /* background-image: url("../images/cover_image_2.png"); */
   background-size: cover;
   color: white;
   text-align: center;
@@ -210,6 +212,7 @@ a:hover {
 
 .content .title {
   font-size: 40px;
+  color: #242424;
   padding-top: 80px;
 }
 
