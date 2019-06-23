@@ -26,8 +26,19 @@ export default class Navbar extends Component {
     else
       this.setState( {navItemTooltip_contact: !this.state["navItemTooltip_"+section]} );
   }
+  
+  getSection() {
+    let re = new RegExp("/([a-zA-Z]+)");
+    let match = (window.location.pathname).match(re);
+    console.log(match);
+    if (match === null) 
+      return "about";
+    
+    return match[1];
+  }
 
   render() {
+    console.log(this.getSection());
     return (
       <div className={css.NavbarContainer}>
         <div className={css.Image}>
@@ -35,7 +46,7 @@ export default class Navbar extends Component {
         </div>
 
         <div className={css.NavItemContainer}>
-          <a href="/">
+          <a href="/about">
             <div id="about" className={css.NavItem}>
               <Icon_About/>
             </div>
@@ -45,7 +56,7 @@ export default class Navbar extends Component {
             About me
           </Tooltip>
 
-          <a href="#">
+          <a href="/project">
             <div id="project" className={css.NavItem}>
               <Icon_Project/>
             </div>
@@ -55,7 +66,7 @@ export default class Navbar extends Component {
             Projects
           </Tooltip>
 
-          <a href="#">
+          <a href="/contact">
             <div id="contact" className={css.NavItem}>
               <Icon_Contact/>
             </div>
