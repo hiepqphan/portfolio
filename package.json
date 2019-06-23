@@ -1,29 +1,36 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "My Personal Website",
-  "main": "app.js",
-  "engines": {
-    "node": "8.9.1"
+  "private": true,
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootstrap": "^4.3.1",
+    "firebase": "^6.2.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hiepqphan/portfolio.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "Hiep Phan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hiepqphan/portfolio/issues"
-  },
-  "homepage": "https://github.com/hiepqphan/portfolio#readme",
-  "dependencies": {
-    "ejs": "^2.5.7",
-    "express": "^4.16.2"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
