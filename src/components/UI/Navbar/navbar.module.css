@@ -9,6 +9,7 @@
   align-items: center;
   background: #333333;
   height: 100vh;
+  min-height: 500px;
   width: 50px;
 }
 
@@ -16,7 +17,8 @@
   position: absolute;
   top: 10px;
   left: 7px;
-  background: green;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -34,4 +36,30 @@
   align-items: center;
   height: 50px;
   width: 50px;
+}
+
+.Selected {
+  background: #2B2B2B;
+}
+
+.Selected svg {
+  fill: white !important;
+}
+
+.ContactItems {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 30px;
+}
+
+.ContactItems a {
+  color: white;
+  margin-top: 10px;
+}
+
+.ContactItems > a:nth-child(2) {
+  color: rgb(0, 119, 181);
 }

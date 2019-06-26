@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 
-import { FirebaseContext } from "../Firebase";
 import Navbar from "../UI/Navbar/navbar";
 import TitleView from "./TitleView/title-view";
 
 import css from "./about.module.css";
 
 export default class About extends Component {
+  _isMounted = false;
+
   constructor(props) {
     super(props);
-    this.state = { loaded:false, };
+    this.state = { loaded:false, 
+                   items:[], };
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   componentDidMount() {
+    this._isMounted = true;
     let _this = this;
     let _items = [];
     let db = this.props.firebase.getDatabase();
@@ -23,7 +30,8 @@ export default class About extends Component {
       });
 
       // Set state here to make sure that we set state AFTER loading from database
-      _this.setState({ loaded:true, items:_items, });
+      if (_this._isMounted)
+        _this.setState({ loaded:true, items:[..._items], });
     });
   }
 
@@ -32,12 +40,12 @@ export default class About extends Component {
       return <></>;
 
     let items = this.state.items.map((item) => (
-      <TitleView className={css.Item} title={item.title} content={item.content.content}/>
+      <TitleView className={css.Item} key={item.title} title={item.title} content={item.content.content}/>
     ));
 
     return (
       <>
-      <Navbar/>
+      <Navbar firebase={this.props.firebase}/>
       <div className={css.AboutContainer}>
         <div className={css.Title}>
           {"I am a {}"}

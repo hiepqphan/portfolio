@@ -1,0 +1,28 @@
+.ProjectContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #004a6e;
+  width: 100%;
+}
+
+.ContentWrapper {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.Title {
+  padding-top: 30px;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.Content {
+  display: flex;
+/*  flex-wrap: wrap;*/
+  justify-content: space-between;
+}
+
+.SectionView {
+  width: 100%;
+}

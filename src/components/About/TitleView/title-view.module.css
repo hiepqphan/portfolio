@@ -14,4 +14,6 @@
 .Content {
   width: 100%;
   text-align: left;
+  font-size: 20px;
+  padding-left: 12px;
 }

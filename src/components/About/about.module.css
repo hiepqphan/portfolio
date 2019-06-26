@@ -1,10 +1,18 @@
 .AboutContainer {
+  background-image: url("../../assets/images/background_people.png"),
+                    url("../../assets/images/background_base.png"),
+                    url("../../assets/images/background_decoration.png"),
+                    url("../../assets/images/background_back_left.png"),
+                    url("../../assets/images/background_back_right.png");
+  background-position: center 90%, bottom, center 90%, left bottom, right bottom;
+  background-repeat: no-repeat;
+  background-size: 1200px, contain, 70%, contain, 80%;
   position: absolute;
   top: 0;
   left: 0;
-  background: #fff1d6;
   color: #004a6e;
   height: 100%;
+  min-height: 750px;
   width: 100%;
 }
 

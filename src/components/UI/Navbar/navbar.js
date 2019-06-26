@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Tooltip } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { ReactComponent as Icon_About } from "../../../assets/icons/user.svg";
 import { ReactComponent as Icon_Project } from "../../../assets/icons/pen.svg";
@@ -11,9 +12,11 @@ export default class Navbar extends Component {
     super(props);
     this.state = { navItemTooltip_about:false,
                    navItemTooltip_project:false,
-                   navItemTooltip_contact:false,};
+                   navItemTooltip_contact:false,
+                   profile_pic:"" };
 
     this.tooltipToggle = this.tooltipToggle.bind(this);
+    this.getUserProfileURL = this.getUserProfileURL.bind(this);
   }
 
   tooltipToggle(e) {
@@ -30,24 +33,44 @@ export default class Navbar extends Component {
   getSection() {
     let re = new RegExp("/([a-zA-Z]+)");
     let match = (window.location.pathname).match(re);
-    console.log(match);
     if (match === null) 
       return "about";
     
     return match[1];
   }
+  
+  getUserProfileURL() {
+    let _this = this; this.props.firebase.getStorage().ref().child("images/profile_image_default.png").getDownloadURL().then(url => {
+      _this.setState({ profile_pic:url });
+    });
+    
+//    this.props.firebase.getStorage().ref("images/posters").listAll().then(res => {
+//      console.log(res);
+//    });
+  }
+  
+  componentDidMount() {
+    this.getUserProfileURL();
+  }
 
   render() {
-    console.log(this.getSection());
+    let selected = { about:false, 
+                     project:false,
+                     contact:false, };
+    selected[this.getSection()] = true;
+    let sections = [selected.about ? " " + css.Selected : "",
+                    selected.project ? " " + css.Selected : "",
+                    selected.contact ? " " + css.Selected : ""];
+    
     return (
       <div className={css.NavbarContainer}>
-        <div className={css.Image}>
-
+        <div className={css.Image} style={{"backgroundImage":"url(\"" + this.state.profile_pic + "\")"}}>
+          
         </div>
 
         <div className={css.NavItemContainer}>
           <a href="/about">
-            <div id="about" className={css.NavItem}>
+            <div id="about" className={css.NavItem + sections[0]}>
               <Icon_About/>
             </div>
           </a>
@@ -57,7 +80,7 @@ export default class Navbar extends Component {
           </Tooltip>
 
           <a href="/project">
-            <div id="project" className={css.NavItem}>
+            <div id="project" className={css.NavItem + sections[1]}>
               <Icon_Project/>
             </div>
           </a>
@@ -67,18 +90,28 @@ export default class Navbar extends Component {
           </Tooltip>
 
           <a href="/contact">
-            <div id="contact" className={css.NavItem}>
+            <div id="contact" className={css.NavItem + sections[2]}>
               <Icon_Contact/>
             </div>
           </a>
           <Tooltip placement="right" isOpen={this.state.navItemTooltip_contact}
                    target="contact" autohide={true} fade={false} toggle={this.tooltipToggle}>
-            Contact me
+            Contacts
           </Tooltip>
         </div>
 
         <div className={css.ContactItems}>
-
+          <a href="https://www.github.com/hiepqphan" target="_blank">
+            <FontAwesomeIcon icon={["fab", "github"]}/>
+          </a>
+      
+          <a href="https://www.linkedin.com/in/hiep-phan-11b58a130" target="_blank">
+            <FontAwesomeIcon icon={["fab", "linkedin"]}/>
+          </a>
+      
+          <a href="mailto:hiepqphan@hotmail.com">
+            <FontAwesomeIcon icon="envelope"/>
+          </a>
         </div>
       </div>
     );

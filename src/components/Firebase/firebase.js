@@ -1,5 +1,6 @@
 import app from "firebase/app";
 import "firebase/firebase-firestore";
+import "firebase/firebase-storage";
 
 var firebaseConfig = {
     apiKey: "AIzaSyDGXLrQSNbj2AzmQUqCgkzSTZ429uXvpSc",
@@ -18,6 +19,10 @@ class Firebase {
 
   getDatabase() {
     return app.firestore();
+  }
+  
+  getStorage() {
+    return app.storage();
   }
 }
 
