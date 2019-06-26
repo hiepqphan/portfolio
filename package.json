@@ -2,6 +2,10 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "engine": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
