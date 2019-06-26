@@ -8,6 +8,7 @@ import { FirebaseContext } from "./components/Firebase";
 import About from "./components/About/about";
 import Project from "./components/Project/project";
 import Contact from "./components/Contact/contact";
+import Wolley from "./components/Wolley/wolley";
 import './App.css';
 
 library.add(fab, faEnvelope);  
@@ -38,6 +39,7 @@ class App extends Component {
         <Route path="/about" component={aboutPage}/>
         <Route path="/project" component={projectPage}/>
         <Route path="/contact" component={contactPage}/>
+        <Route path="/wolley" component={Wolley}/>
       </Router>
     );
   }

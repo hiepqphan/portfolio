@@ -43,7 +43,7 @@ export default class ProjectPreview extends Component {
     
     let linksDisplay = this.props.project.link_display;
     let links = Object.keys(this.props.project.link_display).map(link => (
-      <a key={link} href={linksDisplay[link]} target="_blank">{link}</a>
+      <span className={css.Link}><a key={link} href={linksDisplay[link]} target="_blank">{link}</a></span>
     ));
     
     return (
