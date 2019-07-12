@@ -8,8 +8,8 @@
 
 .ContentWrapper {
   max-width: 1250px;
-  padding-left: 10%;
   padding-right: 100px;
+  margin-left: 10%;
 }
 
 .Title {
