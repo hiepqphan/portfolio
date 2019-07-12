@@ -2,44 +2,55 @@
   position: fixed;
   z-index: 2;
   top: 0;
-  left: 0;
+  left: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: #333333;
   height: 100vh;
   min-height: 500px;
   width: 50px;
 }
 
 .Image {
-  position: absolute;
-  top: 10px;
-  left: 7px;
   background-repeat: no-repeat;
   background-size: cover;
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  margin-top: 20px;
+}
+
+.NavItemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .NavItemContainer svg {
   pointer-events: none;
   width: 20px;
-  fill: #666666;
+  fill: #ffc663;
 }
 
 .NavItem {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #e39000;
   height: 50px;
   width: 50px;
+  border-radius: 25px;
+  transition: all 0.2s ease-out;
+}
+
+.MiddleNavItem div {
+  margin: 10px 0 !important;
 }
 
 .Selected {
-  background: #2B2B2B;
+  background: #e37600;
 }
 
 .Selected svg {
@@ -47,19 +58,90 @@
 }
 
 .ContactItems {
-  position: absolute;
-  bottom: 50px;
+  /* position: absolute;
+  bottom: 50px; */
   display: flex;
   flex-direction: column;
   color: white;
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .ContactItems a {
-  color: white;
   margin-top: 10px;
 }
 
+.ContactItems a:first-child {
+  color: #24292e;
+}
+
 .ContactItems > a:nth-child(2) {
-  color: rgb(0, 119, 181);
+  color: #0073b0;
+}
+
+.ContactItems a:last-child {
+  color: #009dff;
+}
+
+.NavItemContainer_alt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #004a6e;
+  height: 50px;
+  width: 100%;
+}
+
+.Title_alt {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.MenuIcon_alt {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.MenuIcon_alt svg {
+  width: 26px;
+  fill: white !important;
+}
+
+.Menu_alt {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+}
+
+.Menu_alt a {
+  background: #004a6e;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 7px 0;
+}
+
+.Menu_alt a:hover {
+  background: #003752;
+  /* color: #004a6e; */
 }

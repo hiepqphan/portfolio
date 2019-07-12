@@ -12,10 +12,10 @@ export default class Project extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { loaded:false, 
+    this.state = { loaded:false,
                    isShowingProject:false,
                    clickedProject:null };
-    
+
     this.onClickHandler = this.onClickHandler.bind(this);
     this.closeHandler = this.closeHandler.bind(this);
   }
@@ -31,7 +31,7 @@ export default class Project extends Component {
     db.collection("projects").doc("meta").get().then(doc => {
       if (doc.exists)
         _this.categories = doc.data().categories;
-      
+
       if (this._isMounted)
         _this.setState({ loaded:true });
     });
@@ -48,7 +48,7 @@ export default class Project extends Component {
   render() {
     if (!this.state.loaded)
       return <></>;
-    
+
     let sections = this.categories.map((section) => (
       <SectionView key={section} category={section} firebase={this.props.firebase}
                    containerClassName={css.SectionView}  onClickHandler={this.onClickHandler}/>
@@ -57,12 +57,10 @@ export default class Project extends Component {
     return (
       <>
       <Navbar firebase={this.props.firebase}/>
-      
-      {this.state.isShowingProject ?
-      <ProjectView project={this.state.clickedProject} closeHandler={this.closeHandler}/> :
-      <></>
-      }
-      
+
+      <ProjectView project={this.state.clickedProject} isVisible={this.state.isShowingProject}
+                   closeHandler={this.closeHandler}/>
+
       <div className={css.ProjectContainer}>
         <div className={css.ContentWrapper}>
           <div className={css.Title}>

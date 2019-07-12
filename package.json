@@ -22,7 +22,7 @@
     "react-scripts": "3.0.1",
     "react-unity-webgl": "^7.1.7",
     "reactstrap": "^8.0.0",
-    "serve": "^11.0.2"
+    "serve": "^11.1.0"
   },
   "scripts": {
     "dev": "react-scripts start",

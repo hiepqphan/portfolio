@@ -8,7 +8,7 @@ export default class ContactView extends Component {
     return (
       <>
       <div className={css.ContactViewContainer}>
-        <a href={this.props.info.link} target="_blank">
+        <a href={this.props.info.link} target="_blank" rel="noopener noreferrer">
           <div className={css.IconContainer} style={{background:this.props.info.color}}>
             <FontAwesomeIcon icon={this.props.info.icon}/>
           </div>

@@ -1,40 +1,65 @@
 .AboutContainer {
-  background-image: url("../../assets/images/background_people.png"),
+  /* background-image: url("../../assets/images/background_people.png"),
                     url("../../assets/images/background_base.png"),
                     url("../../assets/images/background_decoration.png"),
                     url("../../assets/images/background_back_left.png"),
                     url("../../assets/images/background_back_right.png");
-  background-position: center 90%, bottom, center 90%, left bottom, right bottom;
+  background-position: center 98%, bottom, center 98%, left bottom, right bottom;
   background-repeat: no-repeat;
-  background-size: 1200px, contain, 70%, contain, 80%;
+  background-size: 85%, contain, 70%, contain, 80%; */
+  background-image: url("../../assets/images/background_tail_1.png"),
+                    url("../../assets/images/background_tail_2.png");
+  background-position: 10% bottom, right 75%;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   color: #004a6e;
   height: 100%;
-  min-height: 750px;
   width: 100%;
-}
-
-.Padder {
-  width: 50px;
 }
 
 .Title {
   font-size: 50px;
   font-weight: 600;
   text-align: center;
-  padding-left: 50px;
-  margin: 70px auto;
+  margin: 70px auto 30px auto;
 }
 
 .ItemsContainer {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 1250px;
   margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.Item:nth-child(3) {
-  margin-left: 50px;
-  margin-right: 50px;
+.Item {
+  cursor: default;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-out;
+}
+
+.Item:hover {
+  width: 340px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.Item:first-child img {
+  width: 67%;
+  margin-right: 40px;
+}
+
+.Item:nth-child(2) img {
+  width: 75%;
+}
+
+.Item:last-child img {
+  width: 100%;
 }

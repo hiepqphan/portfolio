@@ -21,12 +21,12 @@ export default class SectionView extends Component {
     this._isMounted = true;
     let _this = this;
     let db = this.props.firebase.getDatabase();
-    
+
     db.collection("projects").doc("meta").collection(this.props.category).get().then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            _this.projects.push(doc); 
+            _this.projects.push(doc);
           });
-          
+
           // Set state here to make sure that we set state AFTER loading from database
           if (_this._isMounted)
             _this.setState({ loaded:true });
@@ -46,7 +46,7 @@ export default class SectionView extends Component {
       <ProjectPreview key={project.id} project={project.data()} project_id={project.id}
                       firebase={this.props.firebase} onClickHandler={this.props.onClickHandler}/>
     ));
-    
+
     return (
       <>
       <div className={css.SectionViewContainer + " " + this.props.containerClassName}>
@@ -54,7 +54,7 @@ export default class SectionView extends Component {
           {this.capitalize(this.props.category)}
         </div>
         <div className={css.Content}>
-          {projects}
+          {projects.length !== 0 ? projects : <span className={css.NoProject}>No projects available</span>}
         </div>
       </div>
       </>

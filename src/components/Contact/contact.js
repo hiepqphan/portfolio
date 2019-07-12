@@ -15,7 +15,7 @@ export default class Contact extends Component {
                 link:"https://www.github.com/hiepqphan",
                 icon:["fab", "github"]},
                 {title:"Email",
-                color:"#ff9b4f",
+                color: "#009dff",
                 link:"mailto:hiepqphan@hotmail.com",
                 icon:"envelope"}];
 
@@ -23,11 +23,11 @@ export default class Contact extends Component {
     let items = this.items.map(item => (
       <ContactView key={item.title} info={item}/>
     ));
-    
+
     return (
       <>
       <Navbar firebase={this.props.firebase}/>
-      
+
       <div className={css.ContactContainer}>
         <div className={css.ContentWrapper}>
           <div className={css.Title}>

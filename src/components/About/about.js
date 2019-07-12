@@ -10,12 +10,18 @@ export default class About extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { loaded:false, 
-                   items:[], };
+    this.state = { loaded: false,
+                   items: [],
+                   showBackground: true,
+                   mouseOnItem: null,
+                   isMouseOnItem: false, };
+
+    this.updateBackground = this.updateBackground.bind(this);
   }
 
   componentWillUnmount() {
     this._isMounted = false;
+    window.removeEventListener("resize", this.updateBackground);
   }
 
   componentDidMount() {
@@ -33,6 +39,27 @@ export default class About extends Component {
       if (_this._isMounted)
         _this.setState({ loaded:true, items:[..._items], });
     });
+
+    this.updateBackground();
+    window.addEventListener("resize", this.updateBackground);
+  }
+
+  updateBackground() {
+    let width = document.body.clientWidth;
+    if (width > 1000)
+      this.setState({ showBackground: true });
+      // container.style.backgroundSize = '200px, 250px';
+    else
+      this.setState({ showBackground: false });
+      // container.style.backgroundSize = '0';
+  }
+
+  mouseOnItemHandler = (data) => {
+    this.setState({ mouseOnItem: data, isMouseOnItem: true });
+  }
+
+  mouseLeaveHandler = () => {
+    this.setState({ mouseOnItem: null, isMouseOnItem: false });
   }
 
   render() {
@@ -40,19 +67,23 @@ export default class About extends Component {
       return <></>;
 
     let items = this.state.items.map((item) => (
-      <TitleView className={css.Item} key={item.title} title={item.title} content={item.content.content}/>
+      <TitleView className={css.Item} key={item.title} firebase={this.props.firebase} title={item.title} content={item.content.content}
+                 onHoverHandler={this.mouseOnItemHandler} onMouseLeaveHandler={this.mouseLeaveHandler}
+                 opacity={this.state.mouseOnItem  === item.title || !this.state.isMouseOnItem ? 1 : 0.3}/>
     ));
+
+    let backgroundSize = "200px, 250px";
 
     return (
       <>
       <Navbar firebase={this.props.firebase}/>
-      <div className={css.AboutContainer}>
+      <div id="about-container" className={css.AboutContainer} style={{ "background-size": this.state.showBackground ? backgroundSize : "0" }}>
         <div className={css.Title}>
           {"I am a {}"}
         </div>
         <div className={css.ItemsContainer}>
-          <div className={css.Padder}/>
           {items}
+          {!this.state.showBackground && <div style={{ width: "290px" }}/>}
         </div>
       </div>
       </>
