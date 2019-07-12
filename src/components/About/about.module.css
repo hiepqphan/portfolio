@@ -60,6 +60,6 @@
   width: 75%;
 }
 
-.Item:last-child img {
+.Item:nth-child(3) img {
   width: 100%;
 }
