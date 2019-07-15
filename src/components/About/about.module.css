@@ -55,7 +55,7 @@
 }
 
 .Item:first-child img {
-  width: 100%;
+  width: 90%;
 }
 
 .Item:nth-child(2) img {
