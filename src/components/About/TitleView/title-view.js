@@ -12,7 +12,7 @@ export default class TitleView extends Component {
 
   getImage() {
     let _this = this;
-    this.props.firebase.getStorage().ref().child(`images/cat_${this.props.title}.png`).getDownloadURL().then(url => {
+    this.props.firebase.getStorage().ref().child(`images/about/${this.props.title}.png`).getDownloadURL().then(url => {
       _this.setState({ profile_pic:url });
     });
   }

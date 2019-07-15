@@ -31,14 +31,14 @@
 .NavItemContainer svg {
   pointer-events: none;
   width: 20px;
-  fill: #ffc663;
+  fill: #87b4f5;
 }
 
 .NavItem {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e39000;
+  background: #3f8bf5;
   height: 50px;
   width: 50px;
   border-radius: 25px;
@@ -50,7 +50,7 @@
 }
 
 .Selected {
-  background: #e37600;
+  background: #004a6e;
 }
 
 .Selected svg {
