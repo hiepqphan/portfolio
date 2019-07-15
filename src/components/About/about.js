@@ -72,11 +72,7 @@ export default class About extends Component {
                  opacity={this.state.mouseOnItem  === item.title || !this.state.isMouseOnItem ? 1 : 0.3}/>
     ));
 
-<<<<<<< HEAD
     let backgroundSize = "500px";
-=======
-    let backgroundSize = "200px, 250px";
->>>>>>> parent of dda7725... Minor UI changes
 
     return (
       <>
