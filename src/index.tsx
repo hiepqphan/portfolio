@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeProvider, createTheme } from '@mui/material';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const theme = createTheme({
+  spacing: 8,
+  palette: {
+    primary: {
+      main: '#f57c00',
+    },
+    secondary: {
+      main: '#263238',
+      contrastText: '#ffecb3',
+    },
+  },
+  shape: {
+    borderRadius: 16,
+  },
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
