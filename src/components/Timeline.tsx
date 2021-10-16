@@ -21,7 +21,6 @@ export default function Timeline(props: PropsType) {
     return (
       <Box>
         {props.events.map((event: EventType, index: number) => {
-          const dateOnLeft = true;
 
           return (
             <Box key={index} sx={{ mt: index === 0 ? 0 : 5 }}>

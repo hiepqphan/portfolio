@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Tooltip, Chip, Theme, useTheme } from '@mui/material';
+import { Box, Typography, Tooltip, Theme, useTheme } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { makeStyles, createStyles } from '@mui/styles';
